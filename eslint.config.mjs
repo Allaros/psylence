@@ -1,10 +1,11 @@
+import path from 'node:path';
+import url from 'node:url';
+
+import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
-import { FlatCompat } from '@eslint/eslintrc';
-import path from 'node:path';
-import url from 'node:url';
-import js from '@eslint/js';
 
 const eslintConfig = defineConfig([
    ...nextVitals,
@@ -14,7 +15,7 @@ const eslintConfig = defineConfig([
       recommendedConfig: js.configs.recommended,
       allConfig: js.configs.all,
    }).config({
-      extends: ['eslint-config-standard', 'prettier'],
+      extends: ['prettier'],
    }),
    {
       rules: {

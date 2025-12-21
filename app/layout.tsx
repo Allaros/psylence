@@ -4,17 +4,17 @@ import React from 'react';
 import './globals.css';
 
 const montserrat = Montserrat({
-   variable: '--font-geist-sans',
+   variable: '--font-montserrat',
    subsets: ['cyrillic', 'latin'],
 });
 
 const rubik = Rubik({
-   variable: '--font-geist-mono',
+   variable: '--font-rubik',
    subsets: ['latin', 'cyrillic'],
 });
 
 const raleway = Raleway({
-   variable: '--font-geist-mono',
+   variable: '--font-raleway',
    subsets: ['latin', 'cyrillic'],
 });
 
