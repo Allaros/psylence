@@ -8,7 +8,7 @@ export function useIsMobile(breakpoint = 768) {
          setIsMobile(window.innerWidth < breakpoint);
       }
 
-      handleResize(); // проверка при первом рендере
+      handleResize();
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
    }, [breakpoint]);

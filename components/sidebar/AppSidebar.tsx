@@ -1,4 +1,11 @@
-import { Calendar, Home, Inbox, Search, Settings } from 'lucide-react';
+import {
+   Home,
+   CircleUserRound,
+   Settings,
+   NotepadText,
+   BookOpen,
+   GraduationCap,
+} from 'lucide-react';
 
 import {
    Sidebar,
@@ -21,24 +28,24 @@ const items = [
    {
       title: 'Тесты',
       url: '#',
-      icon: Inbox,
+      icon: NotepadText,
    },
    {
       title: 'Профиль',
       url: '#',
-      icon: Calendar,
+      icon: CircleUserRound,
    },
    {
       title: 'Статьи',
       url: '#',
-      icon: Search,
+      icon: BookOpen,
    },
 ];
 
 export default function AppSidebar() {
    return (
       <Sidebar>
-         <SidebarContent className='className="flex flex-col bg-primary-dark text-text-500 '>
+         <SidebarContent className="flex flex-col bg-primary-dark text-text-500">
             <SidebarGroup className="flex-1">
                <SidebarGroupLabel className="mt-8">
                   <p className="h3-bold-white">Psylence</p>
@@ -51,8 +58,8 @@ export default function AppSidebar() {
                               asChild
                               className=" transition-colors duration-100 py-6! hover:text-text-400 hover:bg-[#ffffff22]"
                            >
-                              <a href={item.url} className="text-xl">
-                                 <item.icon className="size-5!" />
+                              <a href={item.url} className="text-menu">
+                                 <item.icon className="size-5! max-md:size-4!" />
                                  <span>{item.title}</span>
                               </a>
                            </SidebarMenuButton>
@@ -64,13 +71,25 @@ export default function AppSidebar() {
             <SidebarGroup className="pb-6">
                <SidebarGroupContent>
                   <SidebarMenu>
-                     <SidebarMenuItem>
-                        <SidebarMenuButton className=" transition-colors duration-100 py-6! hover:text-text-400 hover:bg-[#ffffff22]">
+                     <SidebarMenuItem className="md:hidden">
+                        <SidebarMenuButton className="transition-colors duration-100 py-5! hover:text-text-400 hover:bg-[#ffffff22]">
                            <a
                               href="#"
-                              className="text-body flex items-center gap-2 text-xl!"
+                              className="flex items-center gap-2 text-menu"
                            >
-                              <Settings className="size-6" />
+                              <GraduationCap className="size-5! max-md:size-4!" />
+                              Стать психологом
+                           </a>
+                        </SidebarMenuButton>
+                     </SidebarMenuItem>
+
+                     <SidebarMenuItem>
+                        <SidebarMenuButton className=" transition-colors duration-100 py-5! hover:text-text-400 hover:bg-[#ffffff22]">
+                           <a
+                              href="#"
+                              className="flex items-center gap-2 text-menu"
+                           >
+                              <Settings className="size-5! max-md:size-4!" />
                               Настройки
                            </a>
                         </SidebarMenuButton>

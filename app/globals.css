@@ -22,17 +22,25 @@
    --font-rubik: var(--font-rubik);
    --font-raleway: var(--font-raleway);
 
-   --text-h1: clamp(20px, calc(3.93vw + 7.43px), 64px);
-   --text-h2: clamp(18px, calc(2.68vw + 9.43px), 48px);
-   --text-h3: clamp(16px, calc(1.79vw + 10.29px), 36px);
-   --text-h4: clamp(14px, calc(0.89vw + 11.14px), 24px);
+   --text-h1: clamp(24px, calc(3.93vw + 7.43px), 64px);
+   --text-h2: clamp(22px, calc(2.68vw + 9.43px), 48px);
+   --text-h3: clamp(20px, calc(1.79vw + 10.29px), 36px);
+   --text-h4: clamp(16px, calc(0.89vw + 11.14px), 24px);
    --text-body: clamp(12px, calc(0.36vw + 10.86px), 16px);
+
+   --text-menu: clamp(16px, calc(0.357vw + 14.86px), 20px);
 
    --leading-h1: 1.375;
    --leading-h2: 1.3333;
    --leading-h3: 1.5;
    --leading-h4: 1.3333;
    --leading-body: 1.5;
+
+   --bg-pink-radial: radial-gradient(
+      circle,
+      rgba(247, 37, 133, 0.7) 0%,
+      rgba(0, 0, 0, 0) 100%
+   );
 }
 
 @layer utilities {
@@ -71,6 +79,21 @@
    .absolute-center {
       @apply absolute top-[50%] left-[50%] translate-[-50%];
    }
+   .absolute-center-y {
+      @apply absolute top-[50%] translate-y-[-50%];
+   }
+   .absolute-center-x {
+      @apply absolute left-[50%] translate-x-[-50%];
+   }
+   .fixed-center {
+      @apply fixed top-[50%] left-[50%] translate-[-50%];
+   }
+   .fixed-center-y {
+      @apply fixed top-[50%] translate-y-[-50%];
+   }
+   .fixed-center-x {
+      @apply fixed left-[50%] translate-x-[-50%];
+   }
    .animated-underline {
       @apply relative
     after:absolute
@@ -91,6 +114,11 @@
    }
    .animate-accordion-up {
       animation: accordion-up 0.2s ease-out;
+   }
+
+   .bg-pink-radial {
+      background: theme(--bg-pink-radial);
+      box-shadow: 0 0 100px 20px rgba(247, 37, 133, 0.35);
    }
 
    @keyframes accordion-down {

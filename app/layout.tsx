@@ -1,7 +1,13 @@
 import type { Metadata } from 'next';
 import { Montserrat, Rubik, Raleway } from 'next/font/google';
+// eslint-disable-next-line import/order
 import React from 'react';
+
 import './globals.css';
+import { Toaster } from 'sonner';
+
+import { AuthProvider } from '@/providers/AuthProvider';
+import QueryProvider from '@/providers/QueryProvider';
 
 const montserrat = Montserrat({
    variable: '--font-montserrat',
@@ -33,7 +39,10 @@ export default function RootLayout({
          <body
             className={`${montserrat.variable} ${rubik.variable} ${raleway.variable} antialiased`}
          >
-            {children}
+            <QueryProvider>
+               <AuthProvider>{children}</AuthProvider>
+            </QueryProvider>
+            <Toaster />
          </body>
       </html>
    );
